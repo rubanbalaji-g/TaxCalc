@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Tax Calculator FY 2025-26 | Old vs New Regime Comparison</title>
+  <meta name="description" content="Compare Old vs New Income Tax Regime for FY 2025-26. Detailed deductions, slab-wise breakdown, and smart recommendation to help you save maximum tax." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background effects -->
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">₹</span>
+        <div>
+          <span class="logo-title">TaxCalc India</span>
+          <span class="logo-sub">FY 2025–26 · AY 2026–27</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="#calculator" class="nav-link">Calculator</a>
+        <a href="#comparison" class="nav-link">Comparison</a>
+        <a href="#deductions-guide" class="nav-link">Deductions Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">✦ Updated for Budget 2025</div>
+      <h1 class="hero-title">India's Most <span class="gradient-text">Detailed</span> Tax Calculator</h1>
+      <p class="hero-subtitle">
+        Compare Old vs New Tax Regime with every deduction, exemption, and slab—
+        so you keep more of what you earn.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill">📋 Section 80C–80U Covered</div>
+        <div class="stat-pill">🏠 HRA + Home Loan</div>
+        <div class="stat-pill">💡 Smart Recommendation</div>
+        <div class="stat-pill">📊 Visual Breakdown</div>
+      </div>
+    </section>
+
+    <!-- ===================== CALCULATOR FORM ===================== -->
+    <section id="calculator" class="section calculator-section">
+      <div class="section-header">
+        <h2>Enter Your Details</h2>
+        <p>Fill in your income and deduction details below</p>
+      </div>
+
+      <div class="form-grid">
+
+        <!-- ---- INCOME DETAILS ---- -->
+        <div class="form-card full-width">
+          <div class="card-header">
+            <span class="card-icon">💼</span>
+            <div>
+              <h3>Income Details</h3>
+              <p>Your gross annual income from all sources</p>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="field-group">
+              <label for="basicSalary">Basic Salary (Annual) <span class="req">*</span></label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="basicSalary" placeholder="e.g. 800000" min="0" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="hra">HRA Received (Annual)</label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="hra" placeholder="e.g. 200000" min="0" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="specialAllowance">Special / Other Allowances</label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="specialAllowance" placeholder="e.g. 150000" min="0" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="lta">LTA Received (Annual)</label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="lta" placeholder="e.g. 50000" min="0" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="bonus">Bonus / Performance Pay</label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="bonus" placeholder="e.g. 100000" min="0" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="otherIncome">Other Income (Interest, Rental etc.)</label>
+              <div class="input-wrap">
+                <span class="prefix">₹</span>
+                <input type="number" id="otherIncome" placeholder="e.g. 50000" min="0" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Employer NPS / PF -->
+          <div class="sub-section">
+            <h4>Employer Contributions (Exempt)</h4>
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="employerPF">Employer PF Contribution</label>
+                <div class="input-wrap">
+                  <span class="prefix">₹</span>
+                  <input type="number" id="employerPF" placeholder="e.g. 72000" min="0" />
+                </div>
+                <span class="hint">Exempt up to 12% of basic (₹7.5L total employer limit)</span>
+              </div>
+              <div class="field-group">
+                <label for="employerNPS">Employer NPS Contribution [Sec 80CCD(2)]</label>
+                <div class="input-wrap">
+                  <span class="prefix">₹</span>
+                  <input type="number" id="employerNPS" placeholder="e.g. 60000" min="0" />
+                </div>
+                <span class="hint">Exempt up to 10% of basic (14% for Govt. employees)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- HRA Exemption inputs -->
+          <div class="sub-section" id="hraSection">
+            <h4>HRA Exemption Details <span class="tag">Old Regime Only</span></h4>
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="rentPaid">Actual Rent Paid (Annual)</label>
+                <div class="input-wrap">
+                  <span class="prefix">₹</span>
+                  <input type="number" id="rentPaid" placeholder="e.g. 180000" min="0" />
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="cityType">City Type</label>
+                <select id="cityType">
+                  <option value="metro">Metro (Mumbai, Delhi, Kolkata, Chennai) – 50%</option>
+                  <option value="non-metro">Non-Metro – 40%</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- 80C DEDUCTIONS ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">🏦</span>
+            <div>
+              <h3>Section 80C Investments</h3>
+              <p>Combined limit: ₹1,50,000</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="limit-bar-wrap">
+            <div class="limit-label">
+              <span>Total 80C Used</span>
+              <span id="sec80cTotal">₹0</span>
+              <span class="limit-cap">/ ₹1,50,000</span>
+            </div>
+            <div class="limit-bar"><div class="limit-fill" id="sec80cBar"></div></div>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <label>EPF (Employee Provident Fund)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="epf" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>PPF (Public Provident Fund)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="ppf" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>ELSS Mutual Funds</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="elss" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Life Insurance Premium (LIC / Term)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="lic" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>NSC (National Savings Certificate)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="nsc" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>5-Year Tax Saving FD</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="taxfd" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Home Loan Principal Repayment</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="homeLoanPrincipal" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Sukanya Samriddhi Yojana (SSY)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="ssy" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Senior Citizens Savings Scheme</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="scss" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Children's Tuition Fees (up to 2 kids)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="tuitionFee" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <label>Stamp Duty / Registration (House)</label>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="stampDuty" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- NPS & PENSION ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">🏛️</span>
+            <div>
+              <h3>NPS & Pension Deductions</h3>
+              <p>Sections 80CCC, 80CCD(1), 80CCD(1B)</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>80CCC – Pension Fund Contribution</label>
+                <span class="hint">Part of ₹1.5L 80C limit</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="pension80ccc" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80CCD(1) – Employee NPS Contribution</label>
+                <span class="hint">Part of ₹1.5L 80C limit (10% of basic)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="nps80ccd1" placeholder="0" min="0" data-80c />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80CCD(1B) – Additional NPS Contribution</label>
+                <span class="hint">Extra deduction up to ₹50,000 (OVER 80C limit)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="nps80ccd1b" placeholder="0" min="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- HEALTH & INSURANCE ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">🏥</span>
+            <div>
+              <h3>Health & Insurance – 80D</h3>
+              <p>Medical insurance premiums</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>Health Insurance – Self &amp; Family</label>
+                <span class="hint">Limit: ₹25,000 (₹50,000 if senior citizen)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="mediclaim" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>Health Insurance – Parents</label>
+                <span class="hint">Limit: ₹25,000 (₹50,000 if parents are senior citizens)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="mediclaimParents" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>Preventive Health Check-up</label>
+                <span class="hint">Up to ₹5,000 within 80D limit</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="preventiveHealth" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>Senior Citizen Status</label>
+              </div>
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <input type="checkbox" id="isSeniorCitizen" />
+                  <span class="toggle-slider"></span>
+                  <span>Self is Senior Citizen (60+)</span>
+                </label>
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>Parents are Senior Citizens</label>
+              </div>
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <input type="checkbox" id="parentsAreSenior" />
+                  <span class="toggle-slider"></span>
+                  <span>Parents are 60+</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- 80DD & 80DDB -->
+          <div class="sub-section">
+            <h4>Disability &amp; Critical Illness</h4>
+            <div class="field-list">
+              <div class="field-row">
+                <div>
+                  <label>80DD – Disabled Dependent</label>
+                  <span class="hint">₹75,000 (₹1,25,000 for severe ≥80%)</span>
+                </div>
+                <select id="disabled80dd">
+                  <option value="0">Not Applicable</option>
+                  <option value="75000">Normal Disability (₹75,000)</option>
+                  <option value="125000">Severe Disability ≥80% (₹1,25,000)</option>
+                </select>
+              </div>
+              <div class="field-row">
+                <div>
+                  <label>80DDB – Specified Disease Treatment</label>
+                  <span class="hint">Up to ₹40,000 (₹1,00,000 for senior citizen)</span>
+                </div>
+                <div class="input-wrap sm">
+                  <span class="prefix">₹</span>
+                  <input type="number" id="disease80ddb" placeholder="0" min="0" />
+                </div>
+              </div>
+              <div class="field-row">
+                <div>
+                  <label>80U – Self Disability</label>
+                  <span class="hint">₹75,000 (₹1,25,000 for severe)</span>
+                </div>
+                <select id="selfDisabled80u">
+                  <option value="0">Not Applicable</option>
+                  <option value="75000">Normal Disability (₹75,000)</option>
+                  <option value="125000">Severe Disability ≥80% (₹1,25,000)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- HOME LOAN ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">🏠</span>
+            <div>
+              <h3>Home Loan &amp; Housing</h3>
+              <p>Interest deductions under Section 24b, 80EE, 80EEA</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>Sec 24(b) – Home Loan Interest (Self-Occupied)</label>
+                <span class="hint">Limit: ₹2,00,000 per year</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="homeLoanInterest" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80EE – First-time Home Buyer Interest</label>
+                <span class="hint">Extra ₹50,000 (loan ≤35L, property ≤50L, sanctioned 2016-17)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="homeLoan80ee" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80EEA – Affordable Housing Interest</label>
+                <span class="hint">Extra ₹1,50,000 (stamp value ≤45L, sanctioned Apr'19–Mar'22)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="homeLoan80eea" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80EEB – EV Loan Interest</label>
+                <span class="hint">Up to ₹1,50,000</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="evLoan80eeb" placeholder="0" min="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- EDUCATION & OTHER ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">📚</span>
+            <div>
+              <h3>Education, Donations &amp; Other</h3>
+              <p>80E, 80G, 80GG, 80TTA/TTB</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>80E – Education Loan Interest</label>
+                <span class="hint">No limit; entire interest deductible for 8 years</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="educationLoan" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80G – Donations (100% qualifying)</label>
+                <span class="hint">PM Relief Fund, PM CARES etc. – 100% deduction</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="donation100" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80G – Donations (50% qualifying)</label>
+                <span class="hint">Jawaharlal Nehru Memorial Fund etc. – 50% deduction</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="donation50" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80GG – House Rent (No HRA)</label>
+                <span class="hint">Least of: 25% of total income, ₹5,000/month, rent – 10% of income</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="rent80gg" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80GGA – Scientific Research Donations</label>
+                <span class="hint">100% deduction for approved institutions</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="donation80gga" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80TTA – Savings Account Interest</label>
+                <span class="hint">Up to ₹10,000 (not applicable if senior citizen)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="savingsInterest80tta" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>80TTB – Interest for Senior Citizens</label>
+                <span class="hint">Up to ₹50,000 (replaces 80TTA for seniors)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="interest80ttb" placeholder="0" min="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- LTA ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">✈️</span>
+            <div>
+              <h3>Leave Travel Allowance (LTA)</h3>
+              <p>Exemption on domestic travel costs</p>
+            </div>
+            <span class="regime-badge old">Old Regime</span>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>LTA Claimed (Actual Travel Cost)</label>
+                <span class="hint">Exempt up to LTA received; 2 journeys per 4-year block</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="ltaClaimed" placeholder="0" min="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- PROFESSIONAL TAX & Others ---- -->
+        <div class="form-card">
+          <div class="card-header">
+            <span class="card-icon">🧾</span>
+            <div>
+              <h3>Professional Tax &amp; Other Exemptions</h3>
+              <p>Deductible from gross salary</p>
+            </div>
+          </div>
+          <div class="field-list">
+            <div class="field-row">
+              <div>
+                <label>Professional Tax Paid</label>
+                <span class="hint">Deductible u/s 16(iii); max ₹2,500/year</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="profTax" placeholder="0" min="0" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label>Gratuity Received</label>
+                <span class="hint">Exempt up to ₹20 lakh (Govt. employees – fully exempt)</span>
+              </div>
+              <div class="input-wrap sm">
+                <span class="prefix">₹</span>
+                <input type="number" id="gratuity" placeholder="0" min="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /form-grid -->
+
+      <!-- Calculate Button -->
+      <div class="calc-btn-wrap">
+        <button class="btn-calculate" id="calculateBtn" onclick="calculateTax()">
+          <span class="btn-icon">⚡</span>
+          Calculate &amp; Compare
+        </button>
+        <button class="btn-reset" onclick="resetForm()">↺ Reset</button>
+      </div>
+    </section>
+
+    <!-- ===================== RESULTS ===================== -->
+    <section id="comparison" class="section results-section" style="display:none;">
+      <div class="section-header">
+        <h2>Tax Comparison Results</h2>
+        <p>Detailed breakdown for FY 2025–26</p>
+      </div>
+
+      <!-- Recommendation Banner -->
+      <div id="recommendationBanner" class="recommendation-banner"></div>
+
+      <!-- Summary Cards -->
+      <div class="summary-grid">
+        <div class="summary-card old-card">
+          <div class="summary-card-header">
+            <span class="regime-icon">📜</span>
+            <h3>Old Tax Regime</h3>
+            <span class="regime-badge old">With Deductions</span>
+          </div>
+          <div class="summary-main">
+            <div class="tax-amount" id="oldTaxDisplay">₹0</div>
+            <div class="tax-label">Total Tax Payable</div>
+          </div>
+          <div class="summary-breakdown">
+            <div class="bd-row">
+              <span>Gross Income</span>
+              <span id="oldGrossIncome">₹0</span>
+            </div>
+            <div class="bd-row deduct">
+              <span>Total Deductions</span>
+              <span id="oldTotalDeductions">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Taxable Income</span>
+              <span id="oldTaxableIncome">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Tax (Before Cess)</span>
+              <span id="oldTaxBeforeCess">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Surcharge</span>
+              <span id="oldSurcharge">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Health &amp; Edu Cess (4%)</span>
+              <span id="oldCess">₹0</span>
+            </div>
+            <div class="bd-row rebate">
+              <span>Rebate u/s 87A</span>
+              <span id="oldRebate">₹0</span>
+            </div>
+            <div class="bd-row total-row">
+              <span>Net Tax Payable</span>
+              <span id="oldFinalTax">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Effective Tax Rate</span>
+              <span id="oldEffectiveRate">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vs-divider">
+          <div class="vs-circle">VS</div>
+        </div>
+
+        <div class="summary-card new-card">
+          <div class="summary-card-header">
+            <span class="regime-icon">✨</span>
+            <h3>New Tax Regime</h3>
+            <span class="regime-badge new">Default Regime</span>
+          </div>
+          <div class="summary-main">
+            <div class="tax-amount" id="newTaxDisplay">₹0</div>
+            <div class="tax-label">Total Tax Payable</div>
+          </div>
+          <div class="summary-breakdown">
+            <div class="bd-row">
+              <span>Gross Income</span>
+              <span id="newGrossIncome">₹0</span>
+            </div>
+            <div class="bd-row deduct">
+              <span>Standard Deduction</span>
+              <span id="newStdDeduction">₹75,000</span>
+            </div>
+            <div class="bd-row deduct">
+              <span>Employer NPS [80CCD(2)]</span>
+              <span id="newEmployerNPS">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Taxable Income</span>
+              <span id="newTaxableIncome">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Tax (Before Cess)</span>
+              <span id="newTaxBeforeCess">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Surcharge</span>
+              <span id="newSurcharge">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Health &amp; Edu Cess (4%)</span>
+              <span id="newCess">₹0</span>
+            </div>
+            <div class="bd-row rebate">
+              <span>Rebate u/s 87A</span>
+              <span id="newRebate">₹0</span>
+            </div>
+            <div class="bd-row total-row">
+              <span>Net Tax Payable</span>
+              <span id="newFinalTax">₹0</span>
+            </div>
+            <div class="bd-row">
+              <span>Effective Tax Rate</span>
+              <span id="newEffectiveRate">0%</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /summary-grid -->
+
+      <!-- Savings Banner -->
+      <div id="savingsBanner" class="savings-banner"></div>
+
+      <!-- Slab-wise breakdown -->
+      <div class="slab-section">
+        <h3>📊 Slab-wise Tax Breakdown</h3>
+        <div class="slab-grid">
+          <div class="slab-card">
+            <h4>Old Regime Slabs</h4>
+            <table class="slab-table">
+              <thead>
+                <tr>
+                  <th>Income Slab</th>
+                  <th>Rate</th>
+                  <th>Tax</th>
+                </tr>
+              </thead>
+              <tbody id="oldSlabBody"></tbody>
+            </table>
+          </div>
+          <div class="slab-card">
+            <h4>New Regime Slabs</h4>
+            <table class="slab-table">
+              <thead>
+                <tr>
+                  <th>Income Slab</th>
+                  <th>Rate</th>
+                  <th>Tax</th>
+                </tr>
+              </thead>
+              <tbody id="newSlabBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deductions used -->
+      <div class="deductions-used-section">
+        <h3>🎯 Deductions Applied (Old Regime)</h3>
+        <div id="deductionsUsedList" class="deductions-used-list"></div>
+      </div>
+
+      <!-- Visual bar comparison -->
+      <div class="visual-section">
+        <h3>📈 Visual Comparison</h3>
+        <canvas id="taxChart" height="120"></canvas>
+      </div>
+
+      <!-- Monthly takeaway -->
+      <div class="monthly-section">
+        <h3>💰 Monthly In-hand Estimate</h3>
+        <div class="monthly-grid">
+          <div class="monthly-card old-m">
+            <div class="monthly-label">Old Regime</div>
+            <div class="monthly-amount" id="oldMonthly">₹0 / month</div>
+          </div>
+          <div class="monthly-card new-m">
+            <div class="monthly-label">New Regime</div>
+            <div class="monthly-amount" id="newMonthly">₹0 / month</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================== DEDUCTIONS GUIDE ===================== -->
+    <section id="deductions-guide" class="section guide-section">
+      <div class="section-header">
+        <h2>📖 Complete Deductions Guide</h2>
+        <p>Every deduction available under Old & New Tax Regime for FY 2025-26</p>
+      </div>
+
+      <div class="regime-tabs">
+        <button class="tab-btn active" onclick="switchTab('old')" id="tabOld">Old Regime Deductions</button>
+        <button class="tab-btn" onclick="switchTab('new')" id="tabNew">New Regime Allowances</button>
+      </div>
+
+      <div id="tabContentOld" class="tab-content">
+        <div class="guide-grid">
+          <!-- 80C family -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏦</span>
+              <div>
+                <h4>Section 80C / 80CCC / 80CCD(1)</h4>
+                <span class="guide-limit">Combined Limit: ₹1,50,000</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>EPF</strong> – Employee contribution to Provident Fund</li>
+              <li><strong>PPF</strong> – Public Provident Fund deposits (min 15 yr)</li>
+              <li><strong>ELSS</strong> – Equity Linked Savings Scheme (3-yr lock)</li>
+              <li><strong>LIC / Term Insurance</strong> – Premium paid for life insurance</li>
+              <li><strong>NSC</strong> – National Savings Certificate (5 yr)</li>
+              <li><strong>5-Yr Tax FD</strong> – Scheduled bank FDs</li>
+              <li><strong>Home Loan Principal</strong> – Repayment of housing loan</li>
+              <li><strong>SSY</strong> – Sukanya Samriddhi Yojana (girl child)</li>
+              <li><strong>SCSS</strong> – Senior Citizens Savings Scheme</li>
+              <li><strong>Tuition Fees</strong> – Up to 2 children's school/college fees</li>
+              <li><strong>80CCC</strong> – Pension fund contributions (LIC / other)</li>
+              <li><strong>80CCD(1)</strong> – Employee NPS contribution (10% of basic)</li>
+            </ul>
+          </div>
+          <!-- 80CCD(1B) -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏛️</span>
+              <div>
+                <h4>Section 80CCD(1B) – NPS Extra</h4>
+                <span class="guide-limit">Limit: ₹50,000 (over & above 80C)</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li>Additional contribution to NPS Tier-I account</li>
+              <li>Reduces taxable income by up to ₹50,000 extra</li>
+              <li>Total NPS benefit: up to ₹2,00,000 with 80C</li>
+              <li>Effective tax saving up to ₹15,600 (30% slab)</li>
+            </ul>
+          </div>
+          <!-- 80D -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏥</span>
+              <div>
+                <h4>Section 80D – Health Insurance</h4>
+                <span class="guide-limit">Up to ₹1,00,000 combined</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>Self &amp; Family</strong> – ₹25,000 (₹50,000 if you are Senior Citizen)</li>
+              <li><strong>Parents</strong> – ₹25,000 (₹50,000 if parents are Senior Citizens)</li>
+              <li><strong>Preventive Check-up</strong> – ₹5,000 within above limits</li>
+              <li>Max deduction: ₹1,00,000 if both self &amp; parents are senior citizens</li>
+            </ul>
+          </div>
+          <!-- 80DD, 80DDB, 80U -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">♿</span>
+              <div>
+                <h4>80DD / 80DDB / 80U – Disability</h4>
+                <span class="guide-limit">Fixed / as incurred</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>80DD</strong> – Disabled dependent: ₹75,000 / ₹1,25,000 (≥80%)</li>
+              <li><strong>80DDB</strong> – Specified disease: ₹40,000 (₹1,00,000 for seniors)</li>
+              <li><strong>80U</strong> – Self disability: ₹75,000 / ₹1,25,000 (≥80%)</li>
+            </ul>
+          </div>
+          <!-- Home Loan -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏠</span>
+              <div>
+                <h4>Home Loan Deductions</h4>
+                <span class="guide-limit">Up to ₹3,50,000+ per year</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>Sec 24(b)</strong> – Interest on self-occupied home loan: ₹2,00,000</li>
+              <li><strong>Sec 24(b)</strong> – Interest on let-out property: Actual (no limit)</li>
+              <li><strong>80C</strong> – Principal repayment: Within ₹1,50,000 cap</li>
+              <li><strong>80EE</strong> – First-home extra interest: ₹50,000</li>
+              <li><strong>80EEA</strong> – Affordable housing extra: ₹1,50,000</li>
+            </ul>
+          </div>
+          <!-- 80E, 80G -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">📚</span>
+              <div>
+                <h4>Education &amp; Donations</h4>
+                <span class="guide-limit">Unlimited (80E) / 10% GTI (80G)</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>80E</strong> – Education loan interest (higher education): No limit, 8 yrs</li>
+              <li><strong>80G (100%)</strong> – PM CARES, PM National Relief Fund, etc.</li>
+              <li><strong>80G (50%)</strong> – Jawaharlal Nehru Memorial Fund, etc.</li>
+              <li><strong>80GGA</strong> – Scientific/rural research donations: 100%</li>
+              <li><strong>80GGC</strong> – Political party donations: 100%</li>
+            </ul>
+          </div>
+          <!-- HRA, LTA -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏡</span>
+              <div>
+                <h4>HRA &amp; LTA Exemptions</h4>
+                <span class="guide-limit">Sec 10(13A) &amp; Sec 10(5)</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>HRA Exempt</strong> = Least of: Actual HRA | Rent–10%Basic | 50%/40% of Basic</li>
+              <li><strong>LTA</strong> – Actual travel cost for 2 journeys in 4-yr block (domestic)</li>
+              <li><strong>80GG</strong> – If no HRA: Least of rent–10% income / ₹5000/mo / 25% income</li>
+            </ul>
+          </div>
+          <!-- Standard + Prof tax -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">📋</span>
+              <div>
+                <h4>Standard &amp; Professional Tax</h4>
+                <span class="guide-limit">Sec 16</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>Standard Deduction [Sec 16(ia)]</strong> – ₹50,000 (Flat, no proof needed)</li>
+              <li><strong>Professional Tax [Sec 16(iii)]</strong> – Actual paid, max ₹2,500</li>
+              <li><strong>Entertainment Allowance [Sec 16(ii)]</strong> – Government employees only</li>
+            </ul>
+          </div>
+          <!-- 80TTA/TTB -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">🏧</span>
+              <div>
+                <h4>80TTA / 80TTB – Interest Income</h4>
+                <span class="guide-limit">₹10,000 / ₹50,000</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li><strong>80TTA</strong> – Savings bank interest: Up to ₹10,000 (non-senior)</li>
+              <li><strong>80TTB</strong> – All interest (savings + FD + PO): Up to ₹50,000 (senior citizens only)</li>
+              <li>Cannot claim both 80TTA and 80TTB</li>
+            </ul>
+          </div>
+          <!-- EV loan -->
+          <div class="guide-card">
+            <div class="guide-card-header">
+              <span class="guide-icon">⚡</span>
+              <div>
+                <h4>80EEB – Electric Vehicle Loan</h4>
+                <span class="guide-limit">Up to ₹1,50,000</span>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li>Interest on loan taken to purchase EV</li>
+              <li>Loan must be sanctioned Apr 2019 – Mar 2023</li>
+              <li>Applicable for both 2-wheelers and 4-wheelers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabContentNew" class="tab-content" style="display:none;">
+        <div class="new-regime-note">
+          <span class="nr-icon">✨</span>
+          <div>
+            <h4>New Regime – Simplified Structure</h4>
+            <p>The New Tax Regime offers lower slab rates but most deductions & exemptions are NOT available. Only the following are allowed:</p>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-card allowed">
+            <div class="guide-card-header">
+              <span class="guide-icon">✅</span>
+              <div>
+                <h4>Allowed Deductions / Exemptions</h4>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li>✅ <strong>Standard Deduction</strong> – ₹75,000 (salaried/pensioners)</li>
+              <li>✅ <strong>80CCD(2)</strong> – Employer NPS contribution (10% of basic)</li>
+              <li>✅ <strong>Employer PF</strong> – Exempt up to ₹7.5 lakh per year (employer contributions)</li>
+              <li>✅ <strong>Gratuity</strong> – Exempt up to ₹20 lakh</li>
+              <li>✅ <strong>Leave Encashment</strong> – Exempt at retirement (Govt. employees: fully)</li>
+              <li>✅ <strong>Agniveer Corpus Fund</strong> – 100% exempt</li>
+              <li>✅ <strong>Perquisites</strong> – Free food (up to ₹50/meal), official travel, etc.</li>
+              <li>✅ <strong>Sec 54 to 54F</strong> – Capital gain exemptions on reinvestment</li>
+              <li>✅ <strong>Disability Perquisite</strong> – Transport, uniform allowances for disabled</li>
+            </ul>
+          </div>
+          <div class="guide-card not-allowed">
+            <div class="guide-card-header">
+              <span class="guide-icon">❌</span>
+              <div>
+                <h4>NOT Available in New Regime</h4>
+              </div>
+            </div>
+            <ul class="guide-list">
+              <li>❌ Section 80C (EPF, PPF, ELSS, LIC, NSC etc.)</li>
+              <li>❌ Section 80D (Health Insurance)</li>
+              <li>❌ Section 80CCD(1B) (Additional NPS)</li>
+              <li>❌ HRA Exemption [Sec 10(13A)]</li>
+              <li>❌ LTA Exemption [Sec 10(5)]</li>
+              <li>❌ Section 24(b) – Home Loan Interest</li>
+              <li>❌ Section 80E – Education Loan</li>
+              <li>❌ Section 80G – Donations</li>
+              <li>❌ Section 80TTA / 80TTB – Savings Interest</li>
+              <li>❌ Section 80DD / 80DDB / 80U</li>
+              <li>❌ Professional Tax Deduction</li>
+              <li>❌ Section 80EE / 80EEA / 80EEB</li>
+              <li>❌ Chapter VI-A deductions (except 80CCD(2))</li>
+            </ul>
+          </div>
+          <div class="guide-card slabs">
+            <div class="guide-card-header">
+              <span class="guide-icon">📊</span>
+              <div>
+                <h4>New Regime Tax Slabs (FY 2025-26)</h4>
+              </div>
+            </div>
+            <table class="slab-table-inline">
+              <thead><tr><th>Taxable Income</th><th>Rate</th></tr></thead>
+              <tbody>
+                <tr><td>Up to ₹4,00,000</td><td>NIL</td></tr>
+                <tr><td>₹4,00,001 – ₹8,00,000</td><td>5%</td></tr>
+                <tr><td>₹8,00,001 – ₹12,00,000</td><td>10%</td></tr>
+                <tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td></tr>
+                <tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td></tr>
+                <tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td></tr>
+                <tr><td>Above ₹24,00,000</td><td>30%</td></tr>
+              </tbody>
+            </table>
+            <p class="slab-note">Rebate u/s 87A: Tax = Nil if income ≤ ₹12,00,000 (after std. deduction). Cess 4% on tax.</p>
+          </div>
+          <div class="guide-card slabs">
+            <div class="guide-card-header">
+              <span class="guide-icon">📋</span>
+              <div>
+                <h4>Old Regime Tax Slabs (FY 2025-26)</h4>
+              </div>
+            </div>
+            <table class="slab-table-inline">
+              <thead><tr><th>Taxable Income</th><th>Rate</th></tr></thead>
+              <tbody>
+                <tr><td>Up to ₹2,50,000</td><td>NIL</td></tr>
+                <tr><td>₹2,50,001 – ₹5,00,000</td><td>5%</td></tr>
+                <tr><td>₹5,00,001 – ₹10,00,000</td><td>20%</td></tr>
+                <tr><td>Above ₹10,00,000</td><td>30%</td></tr>
+              </tbody>
+            </table>
+            <p class="slab-note">Rebate u/s 87A: Tax = Nil if income ≤ ₹5,00,000. Cess 4% on tax. Standard Deduction ₹50,000.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>⚠️ <strong>Disclaimer:</strong> This calculator is for illustrative purposes only based on FY 2025-26 tax laws.
+         Always consult a Chartered Accountant for accurate tax planning.</p>
+      <p class="footer-copy">Built for Indian taxpayers · FY 2025-26 · AY 2026-27</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

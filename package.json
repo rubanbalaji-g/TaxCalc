@@ -1,0 +1,13 @@
+{
+  "name": "taxcalc-india",
+  "version": "1.0.0",
+  "description": "Indian Income Tax Calculator FY 2025-26 – Old vs New Regime Comparison",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "preview": "npx serve ."
+  },
+  "keywords": ["india", "tax", "calculator", "income-tax", "fy2025", "old-regime", "new-regime"],
+  "author": "",
+  "license": "MIT"
+}
