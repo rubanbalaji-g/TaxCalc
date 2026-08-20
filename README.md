@@ -8,9 +8,9 @@
 
 ---
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frubanbalaji-g%2Ftaxcalc&project-name=taxcalc-india&repository-name=taxcalc)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frubanbalaji-g%2FTaxCalc&project-name=taxcalc-india&repository-name=TaxCalc)
 &nbsp;&nbsp;
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rubanbalaji-g/taxcalc)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rubanbalaji-g/TaxCalc)
 
 </div>
 
@@ -60,8 +60,8 @@
 
 Click either button at the top of this README to deploy instantly with zero config:
 
-- **Vercel** → click [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frubanbalaji-g%2Ftaxcalc&project-name=taxcalc-india&repository-name=taxcalc)
-- **Netlify** → click [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rubanbalaji-g/taxcalc)
+- **Vercel** → click [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frubanbalaji-g%2FTaxCalc&project-name=taxcalc-india&repository-name=TaxCalc)
+- **Netlify** → click [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rubanbalaji-g/TaxCalc)
 
 Both buttons will:
 1. Fork this repo into your account
@@ -131,7 +131,7 @@ netlify deploy --prod --dir .
 
 ```bash
 # Clone the repo
-git clone https://github.com/rubanbalaji-g/taxcalc.git
+git clone https://github.com/rubanbalaji-g/TaxCalc.git
 cd taxcalc
 
 # Serve locally (uses npx, no install needed)
